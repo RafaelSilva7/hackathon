@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form method="POST" action="{% url 'tanques:edit_tanque' id %}">
+		{% csrf_token %}
+		{{ form_tanque }}
+		
+		<button name="submit">Enviar</button>
+	</form>
+</body>
+</html>

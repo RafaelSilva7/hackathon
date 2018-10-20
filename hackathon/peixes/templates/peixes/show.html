@@ -1,0 +1,97 @@
+{% load static %}
+{% load bootstrap %}
+
+<html lang="pt-br">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+      position: fixed;
+			bottom:0;
+			left:0;
+			width: 100%;
+		}
+
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="{% url 'core:index'%}"><img src="{% static 'img/icon.png' %}" style="width:40px"></a>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container text-center">    
+  <div class="row">
+    <div class="col-sm-3 well">
+      <div class="well">
+        <img src="{{ peixe.image.url }}" height="20%" width="100%" alt="Avatar">
+      </div>
+      <div class="well">
+        <p><a href="#">{{ peixe.nome_especie }}</a></p>
+         {{ peixe.descricao }}
+      </div>
+    </div>
+    <div class="col-sm-7">    
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="panel panel-default">
+					  <div class="panel-heading"><b> Distribuição geográfica </b> </div>
+					  <div class="panel-body">{{ peixe.distrib_geograf }}</div>
+					</div>
+        </div>
+      </div>
+
+	  <div class="row">
+        <div class="col-sm-12">
+          <div class="panel panel-default">
+			<div class="panel-heading"> <b> Características  </b> </div>
+				<div class="panel-body">{{ peixe.caracteristica }}</div>
+			</div>
+        </div>
+      </div>
+
+	  <div class="row">
+        <div class="col-sm-12">
+          <div class="panel panel-default">
+			<div class="panel-heading"><b> Reprodução </b> </div>
+				<div class="panel-body">{{ peixe.reproducao }}</div>
+			</div>
+        </div>
+      </div>
+     
+    </div>
+  
+  </div>
+</div>
+
+
+
+<footer class="container-fluid text-center">
+  <p> Fabrica de Software © 2018. Todos os direitos reservados. <p>
+     Quadra 109 Norte, Avenida NS15, ALCNO-14 - Plano Diretor Norte, Palmas - TO / CEP: 77001-090 <p>
+	 Universidade Federal do Tocantins, Bloco III, Sala 05.
+  
+  </p>
+</footer>
+
+</body>
+</html>
